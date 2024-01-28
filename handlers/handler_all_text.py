@@ -57,8 +57,6 @@ class HandlerAllText(Handler):
                               config.KEYBOARD[product],
                               reply_markup=self.keybords.set_select_category(
                                   config.CATEGORY[product]))
-        self.bot.send_message(message.chat.id, "Ок",
-                              reply_markup=self.keybords.category_menu())
 
     def pressed_btn_order(self, message):
         """
