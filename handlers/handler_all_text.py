@@ -29,7 +29,7 @@ class HandlerAllText(Handler):
         """
         Обработка события нажатия на кнопку 'О магазине'
         """
-        self.bot.send_message(message.chat.id, MESSAGES['trading_store'],
+        self.bot.send_message(message.chat.id, MESSAGES['scverna_store'],
                               parse_mode="HTML",
                               reply_markup=self.keybords.info_menu())
 
@@ -245,14 +245,14 @@ class HandlerAllText(Handler):
                                           category_menu())
 
             # ********** меню (категории товара, ПФ, Бакалея, Мороженое)******
-            if message.text == config.KEYBOARD['SEMIPRODUCT']:
-                self.pressed_btn_product(message, 'SEMIPRODUCT')
+            if message.text == config.KEYBOARD['phone']:
+                self.pressed_btn_product(message, 'phone')
 
-            if message.text == config.KEYBOARD['GROCERY']:
-                self.pressed_btn_product(message, 'GROCERY')
+            if message.text == config.KEYBOARD['laptop']:
+                self.pressed_btn_product(message, 'laptop')
 
-            if message.text == config.KEYBOARD['ICE_CREAM']:
-                self.pressed_btn_product(message, 'ICE_CREAM')
+            if message.text == config.KEYBOARD['subscriptions']:
+                self.pressed_btn_product(message, 'subscriptions')
 
             # ********** меню (Заказа)**********
 
