@@ -7,7 +7,7 @@ TOKEN = '6778261614:AAG5InesmBEvnLHTie4yQVDk4tgdRtvDQgY'
 # название БД
 NAME_DB = 'products.db'
 # версия приложения
-VERSION = '0.0.1'
+VERSION = '1.1.3'
 # автор приложния
 AUTHOR = 'odani'
 
@@ -26,6 +26,7 @@ KEYBOARD = {
     'virtual_number': emojize('📱 Виртуальные номера'),
     'accounts': emojize('💻 Аккаунты с играми'),
     'subscriptions': emojize('🎮 Подписки на сервисы'),
+    'vpn_app' : emojize ('🌎 VPN APP'),
     '<<': emojize('⬅'),
     '>>': emojize('➡'),
     'BACK_STEP': emojize('◀'),
@@ -45,6 +46,7 @@ CATEGORY = {
     'virtual_number': 1,
     'accounts': 2,
     'subscriptions': 3,
+    'vpn_app' : 4,
 }
 
 # названия команд

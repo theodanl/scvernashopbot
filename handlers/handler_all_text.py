@@ -242,7 +242,7 @@ class HandlerAllText(Handler):
                                           reply_markup=self.keybords.
                                           category_menu())
 
-            # ********** меню (категории товара, ПФ, Бакалея, Мороженое)******
+            # ********** меню (категории товара, Виртуальный номер, аккаунты, подписки, впн)******
             if message.text == config.KEYBOARD['virtual_number']:
                 self.pressed_btn_product(message, 'virtual_number')
 
@@ -251,6 +251,9 @@ class HandlerAllText(Handler):
 
             if message.text == config.KEYBOARD['subscriptions']:
                 self.pressed_btn_product(message, 'subscriptions')
+
+            if message.text == config.KEYBOARD['vpn_app']:
+                self.pressed_btn_product(message, 'vpn_app')
 
             # ********** меню (Заказа)**********
 
