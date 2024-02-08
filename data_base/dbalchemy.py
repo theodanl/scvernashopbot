@@ -103,6 +103,15 @@ class DBManager(metaclass=Singleton):
         self.close()
         return result.quantity
 
+    def delete_order(self, product_id):
+        """
+        Удаляет данные указанной строки заказа
+        """
+        self._session.query(Order).filter_by(product_id=product_id).delete()
+        self._session.commit()
+        self.close()
+
+
     def select_single_product_quantity(self, rownum):
         """
         Возвращает количество товара на складе

@@ -142,6 +142,44 @@ class HandlerAllText(Handler):
         # отправляем ответ пользователю
         self.send_message_order(count[self.step], quantity_order, message)
 
+    def pressed_btn_x(self, message):
+        """
+        Обработка нажатия кнопки удаления
+        товарной позиции заказа
+        """
+        # получаем список всех product_id заказа
+        count = self.BD.select_all_product_id()
+        # если список не пуст
+        if count.__len__() > 0:
+            # получаем количество конкретной позиции в заказе
+            quantity_order = self.BD.select_order_quantity(count[self.step])
+            # получаем количество товара к конкретной
+            # позиции заказа для возврата в product
+            quantity_product = self.BD.select_single_product_quantity(
+                count[self.step])
+            quantity_product += quantity_order
+            # вносим изменения в БД orders
+            self.BD.delete_order(count[self.step])
+            # вносим изменения в БД product
+            self.BD.update_product_value(count[self.step],
+                                         'quantity', quantity_product)
+            # уменьшаем шаг
+            self.step -= 1
+
+        count = self.BD.select_all_product_id()
+        # если список не пуст
+        if count.__len__() > 0:
+
+            quantity_order = self.BD.select_order_quantity(count[self.step])
+            # отправляем пользователю сообщение
+            self.send_message_order(count[self.step], quantity_order, message)
+
+        else:
+            # если товара нет в заказе отправляем сообщение
+            self.bot.send_message(message.chat.id, MESSAGES['no_orders'],
+                                  parse_mode="HTML",
+                                  reply_markup=self.keybords.category_menu())
+
     def pressed_btn_back_step(self, message):
         """
         Обработка нажатия кнопки перемещения
@@ -205,11 +243,11 @@ class HandlerAllText(Handler):
                                           category_menu())
 
             # ********** меню (категории товара, ПФ, Бакалея, Мороженое)******
-            if message.text == config.KEYBOARD['phone']:
-                self.pressed_btn_product(message, 'phone')
+            if message.text == config.KEYBOARD['virtual_number']:
+                self.pressed_btn_product(message, 'virtual_number')
 
-            if message.text == config.KEYBOARD['laptop']:
-                self.pressed_btn_product(message, 'laptop')
+            if message.text == config.KEYBOARD['accounts']:
+                self.pressed_btn_product(message, 'accounts')
 
             if message.text == config.KEYBOARD['subscriptions']:
                 self.pressed_btn_product(message, 'subscriptions')
@@ -222,8 +260,13 @@ class HandlerAllText(Handler):
             if message.text == config.KEYBOARD['DOUWN']:
                 self.pressed_btn_douwn(message)
 
+            if message.text == config.KEYBOARD['X']:
+                self.pressed_btn_x(message)
+
             if message.text == config.KEYBOARD['BACK_STEP']:
                 self.pressed_btn_back_step(message)
 
             if message.text == config.KEYBOARD['NEXT_STEP']:
                 self.pressed_btn_next_step(message)
+
+                

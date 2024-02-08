@@ -23,8 +23,8 @@ KEYBOARD = {
     'CHOOSE_GOODS': emojize(':open_file_folder: Выбрать товар'),
     'INFO': emojize(':speech_balloon: О магазине'),
     'SETTINGS': emojize('⚙️ Настройки'),
-    'phone': emojize('📱 Смартфоны'),
-    'laptop': emojize('💻 Ноутбуки'),
+    'virtual_number': emojize('📱 Виртуальные номера'),
+    'accounts': emojize('💻 Аккаунты с играми'),
     'subscriptions': emojize('🎮 Подписки на сервисы'),
     '<<': emojize('⬅'),
     '>>': emojize('➡'),
@@ -42,8 +42,8 @@ KEYBOARD = {
 
 # id категорий продуктов
 CATEGORY = {
-    'phone': 1,
-    'laptop': 2,
+    'virtual_number': 1,
+    'accounts': 2,
     'subscriptions': 3,
 }
 

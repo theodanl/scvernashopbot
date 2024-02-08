@@ -78,8 +78,8 @@ class Keyboards:
         Создает разметку кнопок в меню категорий товара и возвращает разметку
         """
         self.markup = ReplyKeyboardMarkup(True, True, row_width=1)
-        self.markup.add(self.set_btn('phone'))
-        self.markup.add(self.set_btn('laptop'))
+        self.markup.add(self.set_btn('virtual_number'))
+        self.markup.add(self.set_btn('accounts'))
         self.markup.add(self.set_btn('subscriptions'))
         self.markup.row(self.set_btn('<<'), self.set_btn('ORDER'))
         return self.markup
