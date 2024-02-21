@@ -1,13 +1,14 @@
-[phases.setup]
+[scvernashopbot]
 aptPkgs = [
-  "...",
-  "ffmpeg",
-  "imagemagick",
-  "ghostscript",
-  "gsfonts",
-  "fonts-droid-fallback",
-  "fonts-noto-mono",
-  "fonts-urw-base35",
+  "certifi",
+  "charset-normalizer",
+  "config",
+  "emoji",
+  "greenlet",
+  "idna",
+  "pyTelegramBotAPI",
+  "SQLAlchemy",
+  "telebot",
 ]
 
 [start]
