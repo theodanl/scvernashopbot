@@ -3,4 +3,4 @@
 python = { version = "3.12.1", type = "build-input" }
 
 [nix]
-enable = truenix-build
+enable = true
