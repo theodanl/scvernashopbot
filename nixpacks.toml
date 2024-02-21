@@ -1,15 +1,6 @@
-[scvernashopbot]
-aptPkgs = [
-  "certifi",
-  "charset-normalizer",
-  "config",
-  "emoji",
-  "greenlet",
-  "idna",
-  "pyTelegramBotAPI",
-  "SQLAlchemy",
-  "telebot",
-]
+# nixpacks.toml
+[dependencies]
+python = { version = "3.12.1", type = "build-input" }
 
-[start]
-cmd = "ffmpeg 2>&1"
+[nix]
+enable = truenix-build
