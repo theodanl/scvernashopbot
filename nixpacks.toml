@@ -10,5 +10,5 @@ pyTelegramBotAPI = "4.14.1"
 SQLAlchemy = "2.0.23"
 telebot = "0.0.5"
 
-[nix]
-enable = true
+[start]
+cmd = "python3.12 telbot.py"
