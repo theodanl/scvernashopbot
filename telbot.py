@@ -23,7 +23,7 @@ class TelBot:
         # инициализируем бот на основе зарегистрированного токена
         self.bot = TeleBot(self.token)
         # инициализируем оброботчик событий
-        self.handler = HandlerMain(self.bot)
+        self.handler = HandlerMain(self.bot) 
 
     def start(self):
         """

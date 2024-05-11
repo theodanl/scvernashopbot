@@ -112,7 +112,7 @@ class Keyboards:
         """
 
         self.markup = ReplyKeyboardMarkup(True, True)
-        # itm_btn_1 = self.set_btn('X', step, quantity)
+        itm_btn_1 = self.set_btn('X', step, quantity)
         itm_btn_2 = self.set_btn('DOUWN', step, quantity)
         itm_btn_3 = self.set_btn('AMOUNT_PRODUCT', step, quantity)
         itm_btn_4 = self.set_btn('UP', step, quantity)
@@ -123,7 +123,7 @@ class Keyboards:
         itm_btn_8 = self.set_btn('APPLAY', step, quantity)
         itm_btn_9 = self.set_btn('<<', step, quantity)
         # рассположение кнопок в меню
-        self.markup.row(itm_btn_2, itm_btn_3, itm_btn_4)
+        self.markup.row(itm_btn_1, itm_btn_2, itm_btn_3, itm_btn_4)
         self.markup.row(itm_btn_5, itm_btn_6, itm_btn_7)
         self.markup.row(itm_btn_9, itm_btn_8)
 

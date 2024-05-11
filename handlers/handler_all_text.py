@@ -1,6 +1,6 @@
 # импортируем ответ пользователю
 from settings.message import MESSAGES
-from settings import config
+from settings import config, utility
 # импортируем класс родитель
 from handlers.handler import Handler
 
@@ -212,6 +212,22 @@ class HandlerAllText(Handler):
         # отправляем ответ пользователю
         self.send_message_order(count[self.step], quantity, message)
 
+    def pressed_btn_apllay(self, message):
+        """
+        обрабатывает входящие текстовые сообщения
+        от нажатия на кнопку 'Оформить заказ'.
+        """
+        # отправляем ответ пользователю
+        self.bot.send_message(message.chat.id,
+                              MESSAGES['applay'].format(
+                                  utility.get_total_coas(self.BD),
+
+                                  utility.get_total_quantity(self.BD)),
+                              parse_mode="HTML",
+                              reply_markup=self.keybords.category_menu())
+        # отчищаем данные с заказа
+        self.BD.delete_all_order()
+
     def handle(self):
         # обработчик(декоратор) сообщений,
         # который обрабатывает входящие текстовые сообщения от нажатия кнопок.
@@ -271,5 +287,11 @@ class HandlerAllText(Handler):
 
             if message.text == config.KEYBOARD['NEXT_STEP']:
                 self.pressed_btn_next_step(message)
+
+            if message.text == config.KEYBOARD['APPLAY']:
+                self.pressed_btn_apllay(message)
+            # иные нажатия и ввод данных пользователем
+            else:
+                self.bot.send_message(message.chat.id, message.text)
 
                 
