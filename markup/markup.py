@@ -81,7 +81,7 @@ class Keyboards:
         self.markup.add(self.set_btn('virtual_number'))
         self.markup.add(self.set_btn('accounts'))
         self.markup.add(self.set_btn('subscriptions'))
-        self.markup.add(self.set_btn('vpn_app'))
+        self.markup.add(self.set_btn('nft'))
         self.markup.row(self.set_btn('<<'), self.set_btn('ORDER'))
         return self.markup
 

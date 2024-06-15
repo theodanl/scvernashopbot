@@ -26,7 +26,7 @@ KEYBOARD = {
     'virtual_number': emojize('📱 Виртуальные номера'),
     'accounts': emojize('💻 Аккаунты с играми'),
     'subscriptions': emojize('🎮 Подписки на сервисы'),
-    'vpn_app' : emojize ('🌎 VPN APP'),
+    'nft' : emojize ('🖌 Цифровое искусство'),
     '<<': emojize('⬅'),
     '>>': emojize('➡'),
     'BACK_STEP': emojize('◀'),
@@ -46,7 +46,7 @@ CATEGORY = {
     'virtual_number': 1,
     'accounts': 2,
     'subscriptions': 3,
-    'vpn_app' : 4,
+    'nft' : 4,
 }
 
 # названия команд

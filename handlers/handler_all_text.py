@@ -268,8 +268,8 @@ class HandlerAllText(Handler):
             if message.text == config.KEYBOARD['subscriptions']:
                 self.pressed_btn_product(message, 'subscriptions')
 
-            if message.text == config.KEYBOARD['vpn_app']:
-                self.pressed_btn_product(message, 'vpn_app')
+            if message.text == config.KEYBOARD['nft']:
+                self.pressed_btn_product(message, 'nft')
 
             # ********** меню (Заказа)**********
 
